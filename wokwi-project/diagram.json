@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "author": "Windsurf Project",
+  "editor": "wokwi",
+  "board": "esp32-dev",
+  "wifi": {
+    "ssid": "Wokwi-GUEST",
+    "password": ""
+  },
+  "connections": [
+    ["ism330dhcx:SCL", "esp32:22", ""],
+    ["ism330dhcx:SDA", "esp32:21", ""],
+    ["adxl375:SCL", "esp32:22", ""],
+    ["adxl375:SDA", "esp32:21", ""],
+    ["ism330dhcx:CS", "esp32:5", ""],
+    ["adxl375:CS", "esp32:4", ""]
+  ],
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp32",
+      "attrs": { "env": "wokwi:esp32" }
+    },
+    {
+      "type": "wokwi-ism330dhcx",
+      "id": "ism330dhcx",
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-adxl345",
+      "id": "adxl375",
+      "attrs": {
+        "variant": "ADXL375"
+      }
+    },
+    {
+      "type": "wokwi-serial-monitor",
+      "id": "monitor",
+      "attrs": {
+        "port": "0",
+        "baudRate": "115200"
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+# Wokwi configuration for Windsurf Sensor Simulator
+
+# Project metadata
+name = "Windsurf Sensor Simulator"
+version = "1.0.0"
+description = "Simulation for windsurfing sensor data collection using ESP32 and IMU sensors"
+
+# Board configuration
+wokwi = { version = "1.2.0" }
+
+# Firmware configuration
+[firmware]
+# Main source file
+main = "windsurf_sensor_sim.ino"
+
+# Required Arduino libraries
+# These will be automatically installed by the Wokwi extension
+[[arduino.libraries]]
+name = "Adafruit ISM330DHCX"
+version = "^2.0.0"
+
+[[arduino.libraries]]
+name = "Adafruit ADXL375"
+version = "^1.0.0"
+
+[[arduino.libraries]]
+name = "Adafruit Unified Sensor"
+version = "^1.1.7"
+
+# Serial monitor configuration (optional)
+[serial]
+# Baud rate for the serial monitor
+baud_rate = 115200
+# Enable timestamps in the serial monitor
+timestamps = true
+
+# Debug configuration (optional)
+[debug]
+# Enable debug output
+debug = true
+# Debug level: error, warn, info, debug, trace
+level = "info"
+
+# Wokwi-specific settings
+[wokwi]
+# Use the latest version of the ESP32 board package
+board = "esp32:esp32:esp32"
+# Enable file watching for automatic reload
+watch = ["*.ino", "*.h", "*.cpp"]
+# Default view when opening the project
+view = "diagram"
+
+# Environment variables (for simulation)
+[env]
+# These will be available in the simulation environment
+WOKWI_PROJECT_ID = "windsurf-sensor-sim"
+WOKWI_PROJECT_NAME = "Windsurf Sensor Simulator"
